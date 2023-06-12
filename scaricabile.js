@@ -37,13 +37,14 @@ Dopo aver raccolto ed elaborato i dati, e’ il momento di mostrare i risultati 
 
 */
 
-function search (sTitle, sLocation){
-/*La funzione scorrerà con un ciclo for l'array
+function search (searchTitle, searchLocation){
+/*La funzione scorrerà con un ciclo for l'array*/
 
-let count = 0;
-let result = [];
+  let count = 0;
+  let result = [];
+  let i;
 
-FOR i in jobs
+/*FOR i in jobs
   if (jobs[i].includes(sTitle.toLowerCase()) && jobs[i].includes(sLocation.toLowerCase())){
     result.push({title,location} = jobs[i]);
     count++;
@@ -53,7 +54,13 @@ FOR i in jobs
 
   in linea di massima.
 */
-
+for (i in jobs){
+  if(jobs[i].includes(searchTitle.toLowerCase()) && jobs[i].includes(searchLocation.toLowerCase())){
+    result.push({title,location} = jobs[i]);
+    count++;
+  }
+}
+return {result, count};
 }
 
 
@@ -148,3 +155,4 @@ const jobs = [
   },
 ]
 
+console.log(search("marketing","us"));
