@@ -37,6 +37,29 @@ Dopo aver raccolto ed elaborato i dati, e’ il momento di mostrare i risultati 
 
 */
 
+function search (sTitle, sLocation){
+/*La funzione scorrerà con un ciclo for l'array
+
+let count = 0;
+let result = [];
+
+FOR i in jobs
+  if (jobs[i].includes(sTitle.toLowerCase()) && jobs[i].includes(sLocation.toLowerCase())){
+    result.push({title,location} = jobs[i]);
+    count++;
+  }
+
+  return {result,count};
+
+  in linea di massima.
+*/
+
+}
+
+
+
+
+
 // NON MODIFICARE QUESTO ARRAY!
 const jobs = [
   { title: "Marketing Intern", location: "US, NY, New York" },
