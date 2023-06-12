@@ -37,32 +37,6 @@ Dopo aver raccolto ed elaborato i dati, e’ il momento di mostrare i risultati 
 
 */
 
-function search (searchTitle, searchLocation){
-/*La funzione scorrerà con un ciclo for l'array*/
-
-  let count = 0;
-  let result = [];
-  let i;
-
-/*FOR i in jobs
-  if (jobs[i].includes(sTitle.toLowerCase()) && jobs[i].includes(sLocation.toLowerCase())){
-    result.push({title,location} = jobs[i]);
-    count++;
-  }
-
-  return {result,count};
-
-  in linea di massima.
-*/
-for (i in jobs){
-  if(jobs[i].includes(searchTitle.toLowerCase()) && jobs[i].includes(searchLocation.toLowerCase())){
-    result.push({title,location} = jobs[i]);
-    count++;
-  }
-}
-return {result, count};
-}
-
 
 
 
@@ -155,4 +129,36 @@ const jobs = [
   },
 ]
 
+function search (searchTitle, searchLocation){
+ 
+  console.log(jobs.length);
+    let count = 0;
+    const result = [];
+    
+ 
+  for (let i=0; i<jobs.length; i++){
+    /*console.log(i); //debug*/
+    if(jobs[i].title.toLowerCase().includes(searchTitle.toLowerCase()) && jobs[i].location.toLowerCase().includes(searchLocation.toLowerCase())){
+      console.log({title,location}=jobs[i]);
+      result.push({title,location}=jobs[i]);
+
+      count++;
+    }
+  };
+  return {result, count};
+  };
+  
 console.log(search("marketing","us"));
+
+
+   //console.log(searchTitle.toLowerCase());
+  /*FOR i in jobs
+    if (jobs[i].includes(sTitle.toLowerCase()) && jobs[i].includes(sLocation.toLowerCase())){
+      result.push({title,location} = jobs[i]);
+      count++;
+    }
+  
+    return {result,count};
+  
+    in linea di massima.
+  */
