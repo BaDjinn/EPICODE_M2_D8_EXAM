@@ -129,19 +129,16 @@ const jobs = [
   },
 ]
 
-function search (searchTitle, searchLocation){
- 
-  console.log(jobs.length);
+function search (searchTitle, searchLocation){ 
+  //console.log(jobs.length);
     let count = 0;
     const result = [];
-    
- 
   for (let i=0; i<jobs.length; i++){
     /*console.log(i); //debug*/
     if(jobs[i].title.toLowerCase().includes(searchTitle.toLowerCase()) && jobs[i].location.toLowerCase().includes(searchLocation.toLowerCase())){
-      console.log({title,location}=jobs[i]);
-      result.push({title,location}=jobs[i]);
-
+      //console.log({title,location}=jobs[i]);
+      const {title,location}=jobs[i];
+      result.push({title,location});
       count++;
     }
   };
@@ -150,15 +147,36 @@ function search (searchTitle, searchLocation){
   
 console.log(search("marketing","us"));
 
-
-   //console.log(searchTitle.toLowerCase());
-  /*FOR i in jobs
-    if (jobs[i].includes(sTitle.toLowerCase()) && jobs[i].includes(sLocation.toLowerCase())){
-      result.push({title,location} = jobs[i]);
+function search2 (searchTitle, searchLocation){ 
+  //console.log(jobs.length);
+    let count = 0;
+    const result = [];
+  jobs.forEach((job)=>{
+    if(job.title.toLowerCase().includes(searchTitle.toLowerCase()) && job.location.toLowerCase().includes(searchLocation.toLowerCase())){
+      //console.log({title,location}=jobs[i]);
+      const {title,location}=job;
+      result.push({title,location});
       count++;
     }
-  
-    return {result,count};
-  
-    in linea di massima.
-  */
+  })
+   return {result, count};
+  };
+  console.log(search2("marketing","us"));
+
+  // function search3 (searchTitle, searchLocation){ 
+  //   //console.log(jobs.length);
+  //     let count = 0;
+  //     const result = [];
+  //     const ricerca = searchTitle.toLowerCase().split(" ");
+  //   jobs.forEach((job)=>{
+                                                //finire qui sotto con ricerca[i-1] &= ricerca[i]
+  //     if((job.title.toLowerCase().includes(ricerca.forEach)) && job.location.toLowerCase().includes(searchLocation.toLowerCase())){
+  //       //console.log({title,location}=jobs[i]);
+  //       const {title,location}=job;
+  //       result.push({title,location});
+  //       count++;
+  //     }
+  //   })
+  //    return {result, count};
+  //   };
+  //   console.log(search3("eng teach abroad","us"),"It's meee");
