@@ -162,32 +162,28 @@ function search2 (searchTitle, searchLocation){
    return {result, count};
   };
   console.log(search2("marketing","us"));
-
-  // function search3 (searchTitle, searchLocation){ 
-  //   //console.log(jobs.length);
-  //     let count = 0;
-  //     const result = [];
-  //     //const ricerca = searchTitle.toLowerCase().split(" ");
-      
-  //   jobs.forEach((job)=>{
-  //                                               //finire qui sotto con ricerca[i-1] &= ricerca[i]
-  //     if(compareStrings(job.title.toLowerCase(),searchTitle) && compareStrings(job.location.toLowerCase(),searchTitle)){
-  //       //console.log({title,location}=jobs[i]);
-  //       const {title,location}=job;
-  //       result.push({title,location});
-  //       count++;
-  //     }
-  //   })
-  //    return {result, count};
-  // };
-
   let compareStrings = (strCercata,testoDaFiltrare) => {
-      const arrStrCercata = strCercata.toLowerCase().split(" ");
-      //console.log(arrStrCercata);
-      let comparator = true;
-      arrStrCercata.forEach((strExCercata)=>{comparator &= testoDaFiltrare.toLowerCase().includes(strExCercata)});
-      return comparator;
-  };
-  console.log("prova di comparazione: ",compareStrings("for no the","Aint No Rest For tHe Wicked"));
+    const arrStrCercata = strCercata.toLowerCase().split(" ");
+    //console.log(arrStrCercata);
+    let comparator = true;
+    arrStrCercata.forEach((strExCercata)=>{comparator &= testoDaFiltrare.toLowerCase().includes(strExCercata)});
+    return comparator;
+};
 
-   //console.log(search3("eng teach abroad","us"),"It's meee");
+  function search3 (searchTitle, searchLocation){ 
+    //console.log(jobs.length);
+      let count = 0;
+      const result = [];      
+    jobs.forEach((job)=>{
+      if(compareStrings(searchTitle,job.title.toLowerCase()) && compareStrings(searchLocation,job.location.toLowerCase())){
+        const {title,location}=job;
+        result.push({title,location});
+        count++;
+      }
+    })
+     return {result, count};
+  };
+
+
+  //console.log("prova di comparazione: ",compareStrings("for no the","Aint No Rest For tHe Wicked"));
+  //console.log(search3("marketing","us"));
