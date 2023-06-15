@@ -167,10 +167,11 @@ function search2 (searchTitle, searchLocation){
   //   //console.log(jobs.length);
   //     let count = 0;
   //     const result = [];
-  //     const ricerca = searchTitle.toLowerCase().split(" ");
+  //     //const ricerca = searchTitle.toLowerCase().split(" ");
+      
   //   jobs.forEach((job)=>{
-                                                //finire qui sotto con ricerca[i-1] &= ricerca[i]
-  //     if((job.title.toLowerCase().includes(ricerca.forEach)) && job.location.toLowerCase().includes(searchLocation.toLowerCase())){
+  //                                               //finire qui sotto con ricerca[i-1] &= ricerca[i]
+  //     if(compareStrings(job.title.toLowerCase(),searchTitle) && compareStrings(job.location.toLowerCase(),searchTitle)){
   //       //console.log({title,location}=jobs[i]);
   //       const {title,location}=job;
   //       result.push({title,location});
@@ -178,5 +179,15 @@ function search2 (searchTitle, searchLocation){
   //     }
   //   })
   //    return {result, count};
-  //   };
-  //   console.log(search3("eng teach abroad","us"),"It's meee");
+  // };
+
+  let compareStrings = (strCercata,testoDaFiltrare) => {
+      const arrStrCercata = strCercata.toLowerCase().split(" ");
+      //console.log(arrStrCercata);
+      let comparator = true;
+      arrStrCercata.forEach((strExCercata)=>{comparator &= testoDaFiltrare.toLowerCase().includes(strExCercata)});
+      return comparator;
+  };
+  console.log("prova di comparazione: ",compareStrings("for no the","Aint No Rest For tHe Wicked"));
+
+   //console.log(search3("eng teach abroad","us"),"It's meee");
