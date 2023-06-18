@@ -9,18 +9,26 @@
     <title>Job Search</title>
 </head>
 <body>
-    <div>
+    <header>
         
         <h1>Job Hunting</h1>
-        <div>
-            <input type="text" id="inJob" placeholder="What Job??" required>
-            <input type="text" id="inPlace" placeholder="US, CA, San Francisco"required>
-            <button type="submit" id="addBtn" onclick="search3()">Search</button>
-            
-        </div>
+    </header>
+    <main>
         
-    </div>
-    
+            <div>
+                <input type="text" id="inJob" placeholder="What Job??" required>
+                <input type="text" id="inPlace" placeholder="US, CA, San Francisco"required>
+                <button  id="searchButton" onclick="printResults()">Search</button>
+                
+            </div>
+            <section>
+                <table class="jobResultTable">
+
+                </table>
+            </section>
+        
+    </main>
+   
     <script type="module" src="./main.js"></script>
 </body>
 </html>

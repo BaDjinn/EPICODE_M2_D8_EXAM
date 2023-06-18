@@ -44,7 +44,7 @@ let compareStrings = (strCercata,testoDaFiltrare) => {
       return comparator;
 };
   
-function search3 (searchTitle, searchLocation,arr){ 
+function search3(searchTitle, searchLocation,arr){ 
       //console.log(jobs.length);
         let count = 0;
         const result = [];      
@@ -61,3 +61,9 @@ function search3 (searchTitle, searchLocation,arr){
   
     //console.log("prova di comparazione: ",compareStrings("for no the","Aint No Rest For tHe Wicked"));
     // console.log(search3("marketing","us",jobs));
+
+function printResults() {
+  const inJob = document.getElementById("inJob").value;
+  console.log(inJob);
+  
+}
