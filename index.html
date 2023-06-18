@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./styles.css">
 
     <title>Job Search</title>
 </head>
 <body>
-    <h1>Job Hunting</h1>
     <div>
-        <input type="text" id="inJob" placeholder="What Job??">
-        <input type="text" id="inPlace" placeholder="US, CA, San Francisco">
-        <button type="submit" id="addBtn" onclick="search3()">Search</button>
+        
+        <h1>Job Hunting</h1>
+        <div>
+            <input type="text" id="inJob" placeholder="What Job??" required>
+            <input type="text" id="inPlace" placeholder="US, CA, San Francisco"required>
+            <button type="submit" id="addBtn" onclick="search3()">Search</button>
+            
+        </div>
         
     </div>
-    
     
     <script type="module" src="./main.js"></script>
 </body>
